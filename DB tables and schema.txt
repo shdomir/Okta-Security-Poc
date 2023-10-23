@@ -1,0 +1,20 @@
+CREATE DATABASE `spring_security_poc` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+CREATE TABLE `card` (
+  `card_id` int NOT NULL AUTO_INCREMENT,
+  `card_no` double NOT NULL DEFAULT '123456789',
+  `customer_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`card_id`),
+  UNIQUE KEY `card_id_UNIQUE` (`card_id`),
+  UNIQUE KEY `card_no_UNIQUE` (`card_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `users` (
+  `user_id` int NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `authority` varchar(45) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `name_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
